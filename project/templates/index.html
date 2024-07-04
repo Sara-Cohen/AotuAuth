@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <label for="identity_number">Personal Identity Number:</label>
+        <input type="text" id="identity_number" name="identity_number">
+        <button type="submit">Login</button>
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -2,7 +2,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 # Connect to MongoDB
-client = MongoClient("mongodb://localhost:27017/")
+client = MongoClient("mongodb+srv://naamameypen:kJlFQ6jtZj8zK1eZ@cluster0.nh5hxwe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
 # Create (or use existing) database
 db = client['companyDatabase']

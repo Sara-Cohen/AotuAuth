@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<h1>Welcome, {{ user.name }}</h1>
+<h2>Available Projects</h2>
+<ul>
+    {% for project in projects %}
+    <li>{{ project.project_name }} - {{ project.service_name }}
+        <form action="/request_permission" method="post">
+            <input type="hidden" name="user_id" value="{{ user._id }}">
+            <input type="hidden" name="project_id" value="{{ project._id }}">
+            <label for="access_type">Access Type:</label>
+            <select name="access_type">
+                <option value="read">Read</option>
+                <option value="write">Write</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Request Permission</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

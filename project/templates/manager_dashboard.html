@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<h1>Pending Requests</h1>
+<ul>
+    {% for request in requests %}
+    <li>
+        User ID: {{ request.user_id }} - Project ID: {{ request.project_id }} - Access Type: {{ request.access_type }}
+        <a href="/approve_request/{{ request._id }}">Approve</a>
+    </li>
+    {% endfor %}
+</ul>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
